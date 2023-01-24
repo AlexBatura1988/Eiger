@@ -40,6 +40,13 @@ public class Main {
         return error;
     }
 
+    public static int summer(int n) {
+        if (n == 0)
+            return 0;
+        return (n % 10 + summer(n / 10));
+    }
+
+
     public static void main(String[] args) {
         List<String> products = new ArrayList<>();
         List<Float> productPrices = new ArrayList<>();
@@ -63,7 +70,9 @@ public class Main {
         soldPrice.add((float) 5.97);
         soldPrice.add((float) 3.29);
 
-        System.out.println(priceCheck(products,productPrices,productSold,soldPrice));
+        System.out.println(priceCheck(products, productPrices, productSold, soldPrice));
+
+        System.out.println(summer(2347623));
 
 
     }
