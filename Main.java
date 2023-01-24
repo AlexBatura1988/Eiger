@@ -46,6 +46,26 @@ public class Main {
         return (n % 10 + summer(n / 10));
     }
 
+    //Exercise SQL
+    /*
+    SELECT * FROM
+(
+SELECT
+	D.Name AS DepartmentName, COUNT(E.Id) OVER(PARTITION BY E.Department_ID) AS EmployeesNumber
+FROM
+	Department AS D
+LEFT JOIN
+	Employee AS E
+ON
+	D.Id = E.Department_ID
+) AS Dept
+GROUP BY
+    DepartmentName, EmployeesNumber
+ORDER BY
+    DepartmentName ASC
+
+     */
+
 
     public static void main(String[] args) {
         List<String> products = new ArrayList<>();
